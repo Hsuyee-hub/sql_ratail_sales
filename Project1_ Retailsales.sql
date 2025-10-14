@@ -6,16 +6,16 @@ CREATE TABLE retail_sales
     sale_date DATE,	
     sale_time TIME,
     customer_id INT,	
-    gender VARCHAR(10),
+    gender VARCHAR(255),
     age INT,
-    category VARCHAR(35),
+    category VARCHAR(255),
     quantity INT,
     price_per_unit FLOAT,	
     cogs FLOAT,
     total_sale FLOAT
 );
 
--- Data Cleaning
+-- Data Exploration & Cleaning
 SELECT *
 FROM retail_sales
 LIMIT 10;
@@ -45,8 +45,6 @@ WHERE
     cogs IS NULL
     OR
     total_sale IS NULL;
-
--- Data Exploration & Cleaning
 
 -- How many sales we have?
 SELECT COUNT(*) AS total_sale
